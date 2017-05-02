@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="com.developer.paul.recyclerview.ClosableRecyclerViewUtil"/>
+        <variable
+            name="item"
+            type="com.developer.paul.recyclerview.ItemViewModel"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@{ClosableRecyclerViewUtil.getIconRes(context, item.type)}"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            android:onClick="@{item.onItemClickListener()}"
+            android:text="@{item.name}"/>
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#fff000"
+            android:onClick="@{item.onDeleteClick()}"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+</layout>

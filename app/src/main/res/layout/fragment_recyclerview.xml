@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="vm"
+            type="com.developer.paul.recyclerview.ViewModel"/>
+
+        <import type="com.developer.paul.recyclerview.LayoutManagers"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Location"
+            android:onClick="@{vm.addItem()}" />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Repeat"
+            android:onClick="@{vm.addItem()}" />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Note"
+            android:onClick="@{vm.addItem()}" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:adapter="@{vm.adapter}"
+            app:itemBinding="@{vm.singleItem}"
+            app:items="@{vm.itemViewModelObservableList}"
+            app:viewHolder="@{vm.viewHolder}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:itemDecoration="@{vm.divider}"
+            />
+
+    </LinearLayout>
+
+</layout>
