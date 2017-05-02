@@ -4,7 +4,7 @@
         <import type="com.developer.paul.recyclerview.ClosableRecyclerViewUtil"/>
         <variable
             name="item"
-            type="com.developer.paul.recyclerview.ItemViewModel"/>
+            type="com.developer.paul.recyclerview.viewModels.ItemViewModel"/>
     </data>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal" android:layout_width="match_parent"

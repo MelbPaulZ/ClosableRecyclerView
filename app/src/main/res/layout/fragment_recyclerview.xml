@@ -4,7 +4,11 @@
     <data>
         <variable
             name="vm"
-            type="com.developer.paul.recyclerview.ViewModel"/>
+            type="com.developer.paul.recyclerview.viewModels.ViewModel"/>
+
+        <variable
+            name="iconVM"
+            type="com.developer.paul.recyclerview.viewModels.IconViewModel"/>
 
         <import type="com.developer.paul.recyclerview.LayoutManagers"/>
     </data>
@@ -27,15 +31,30 @@
             android:text="Note"
             android:onClick="@{vm.addItem()}" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:adapter="@{vm.adapter}"
             app:itemBinding="@{vm.singleItem}"
-            app:items="@{vm.itemViewModelObservableList}"
+            app:items="@{vm.observableList}"
             app:viewHolder="@{vm.viewHolder}"
             app:layoutManager="@{LayoutManagers.linear()}"
             app:itemDecoration="@{vm.divider}"
+            />
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:adapter="@{iconVM.adapter}"
+            app:itemBinding="@{iconVM.iconItem}"
+            app:items="@{iconVM.observableList}"
+            app:viewHolder="@{iconVM.viewHolder}"
+            app:layoutManager="@{LayoutManagers.linearHorizontal()}"
             />
 
     </LinearLayout>

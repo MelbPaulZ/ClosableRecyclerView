@@ -14,14 +14,23 @@ public class LayoutManagers {
     }
 
     public interface LayoutManagerFactory{
-        RecyclerView.LayoutManager create(RecyclerView recyclerView);
+        LayoutManager create(RecyclerView recyclerView);
     }
 
     public static LayoutManagerFactory linear(){
         return new LayoutManagerFactory() {
             @Override
-            public RecyclerView.LayoutManager create(RecyclerView recyclerView) {
+            public LayoutManager create(RecyclerView recyclerView) {
                 return new LinearLayoutManager(recyclerView.getContext());
+            }
+        };
+    }
+
+    public static LayoutManagerFactory linearHorizontal(){
+        return new LayoutManagerFactory() {
+            @Override
+            public LayoutManager create(RecyclerView recyclerView) {
+                return new LinearLayoutManager(recyclerView.getContext(), RecyclerView.HORIZONTAL, false);
             }
         };
     }

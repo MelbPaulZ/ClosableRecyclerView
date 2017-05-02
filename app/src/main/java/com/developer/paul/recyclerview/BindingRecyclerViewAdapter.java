@@ -1,4 +1,4 @@
-package com.developer.paul.recyclerview.itemDecorators;
+package com.developer.paul.recyclerview;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableList;
@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.developer.paul.recyclerview.ItemBinding;
 import com.developer.paul.recyclerview.interfaces.BindingCollectionAdapter;
 
 import java.lang.ref.WeakReference;

@@ -1,17 +1,19 @@
-package com.developer.paul.recyclerview;
+package com.developer.paul.recyclerview.viewModels;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
 import android.widget.Toast;
 
+import com.developer.paul.recyclerview.BR;
 import com.developer.paul.recyclerview.interfaces.ClosableInterface;
+import com.developer.paul.recyclerview.interfaces.Positionable;
 
 /**
  * Created by Paul on 2/5/17.
  */
 
-public class ItemViewModel extends BaseObservable {
+public class ItemViewModel extends BaseObservable implements Positionable{
     private String name;
     private ClosableInterface closableInterface;
     private int position;
@@ -33,11 +35,12 @@ public class ItemViewModel extends BaseObservable {
         notifyPropertyChanged(BR.name);
     }
 
-
+    @Override
     public void setPosition(int position) {
         this.position = position;
     }
 
+    @Override
     public int getPosition() {
         return position;
     }

@@ -3,9 +3,6 @@ package com.developer.paul.recyclerview;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
 
-import com.developer.paul.recyclerview.itemDecorators.BindingRecyclerViewAdapter;
-import com.developer.paul.recyclerview.itemDecorators.DividerItemDecorator;
-
 import java.util.List;
 
 /**
