@@ -12,9 +12,11 @@
 
         <import type="com.developer.paul.recyclerview.LayoutManagers"/>
     </data>
+
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -47,16 +49,17 @@
         </LinearLayout>
 
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:adapter="@{iconVM.adapter}"
-            app:itemBinding="@{iconVM.iconItem}"
-            app:items="@{iconVM.observableList}"
-            app:viewHolder="@{iconVM.viewHolder}"
-            app:layoutManager="@{LayoutManagers.linearHorizontal()}"
-            />
+        <!--<com.developer.paul.recyclerview.ExpandableRecyclerView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:adapter="@{iconVM.adapter}"-->
+            <!--app:itemBinding="@{iconVM.iconItem}"-->
+            <!--app:items="@{iconVM.observableList}"-->
+            <!--app:viewHolder="@{iconVM.viewHolder}"-->
+            <!--app:layoutManager="@{LayoutManagers.linearHorizontal()}"-->
+            <!--/>-->
 
     </LinearLayout>
+
 
 </layout>

@@ -37,23 +37,6 @@ public class BindingRecyclerViewAdapter<T> extends RecyclerView.Adapter<Recycler
         }
         ViewDataBinding binding = onCreateBinding(inflater, viewType, parent);
         final RecyclerView.ViewHolder holder = onCreateViewHolder(binding);
-//        binding.addOnRebindCallback(new OnRebindCallback() {
-//            @Override
-//            public boolean onPreBind(ViewDataBinding binding) {
-//                return recyclerView != null && recyclerView.isComputingLayout();
-//            }
-//
-//            @Override
-//            public void onCanceled(ViewDataBinding binding) {
-//                if (recyclerView == null || recyclerView.isComputingLayout()) {
-//                    return;
-//                }
-//                int position = holder.getAdapterPosition();
-//                if (position != RecyclerView.NO_POSITION) {
-//                    notifyItemChanged(position, DATA_INVALIDATION);
-//                }
-//            }
-//        });
         return holder;
     }
 
@@ -206,6 +189,11 @@ public class BindingRecyclerViewAdapter<T> extends RecyclerView.Adapter<Recycler
             }
             adapter.notifyItemRangeRemoved(positionStart, itemCount);
         }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        this.recyclerView = recyclerView;
     }
 
     public interface ItemIds<T>{
